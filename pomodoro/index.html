@@ -1,0 +1,85 @@
+<!doctype HTML>
+<html lang="en">
+<!--
+WELCOME TO THE STATIC CONTENT,
+A pen By Qadir Pervez, also known as devD.
+This is basic pomodoro clock (web version)
+made with bootstrap, jquery ans a lot of vannila javaScript.
+-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- bootstrap cdn -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+  <!-- Custom Font -->
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+  <link rel="stylesheet" href="app.css" >
+</head>
+<body id="pomodoro-body" class="colorChange">
+  <div class="container-fluid">
+    <div id="heading-container" class="text-center">
+      <h1 id="heading">pomoDoro Clock !</h1>
+    </div><div class="clearfix"></div>
+    <div id="buttons-section" class="row">
+      <div class="col-md-6 text-center" >
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8">
+            <div class="col-md-8 button-text-adjust" >
+              <h3>Session length : </h3>
+            </div>
+            <div class="btn-group-vertical col-md-4" role="group" aria-label="...">
+              <div>
+                <button type="button" class="btn btn-success" onclick="addSessionTime()"><i class="glyphicon glyphicon-plus"> </i></button>
+              </div>
+              <div class="time-in-min"><span id="sessionTime">25</span> min</div>
+              <div >
+                <button type="button" id="subSession" class="btn btn-danger" onclick="subSessionTime()"><i class="glyphicon glyphicon-minus"> </i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 text-center" >
+        <div class="row">
+          <div class="col-md-offset-2 col-md-8">
+            <div class="col-md-8 button-text-adjust" >
+              <h3>Break length : </h3>
+            </div>
+            <div class="btn-group-vertical col-md-4" role="group" aria-label="...">
+              <div>
+                <button type="button" id="addBreak" class="btn btn-success" onclick="addBreakTime()"><i class="glyphicon glyphicon-plus"> </i></button>
+              </div>
+              <div class="time-in-min"><span id="breakTime">5</span> min</div>
+              <div >
+                <button type="button" id="subBreak" class="btn btn-danger" onclick="subBreakTime()"><i class="glyphicon glyphicon-minus"> </i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><div class="clearfix"></div>
+    <!-- Buttton section Ended -->
+    <!-- Time left section -->
+    <div id="time-left-section" class="text-center" >
+      <p id="time-left"> 00 : 00</p>
+    </div><div class="clearfix"></div>
+    <!-- Message section started -->
+    <div id="message-section" class="text-center">
+      <p id="message">No Work, yeppieeeee!</p>
+    </div><div class="clearfix"></div>
+    <div id="action-btn-section" class="text-center">
+      <button type="button" class="btn btn-primary" id="startBtn" onclick="startTimer()"><i class="glyphicon glyphicon-play"></i> Start</button>
+      <button type="button" class="btn btn-primary" id="pauseBtn" onclick="pauseTimer()"><i class="glyphicon glyphicon-pause"></i> Pause</button>
+      <button type="button" class="btn btn-primary" id="resumeBtn" onclick="resumeTimer()"><i class="glyphicon glyphicon-play"></i> Resume</button>
+      <button type="button" class="btn btn-danger" id="resetBtn" onclick="resetBtn()"><i class="glyphicon glyphicon-retweet"></i> Reset</button>
+    </div>
+  </div>
+</body>
+<!-- Some JS libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+<script src="app.js"></script>
+</html>

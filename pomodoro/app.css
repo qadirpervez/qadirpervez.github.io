@@ -1,0 +1,69 @@
+/* Style for POMODORO clock */
+/* Owner: Qadir Pervez */
+/* A beautifull PEN */
+
+
+/* STYLE STARTS */
+/* Body Style */
+#pomodoro-body{
+	padding: 0;
+	margin: 0;
+	font-family: 'Gloria Hallelujah', cursive;
+	height: 100%;
+	width: 100%;
+}
+.colorChange{
+	background: #416C45;
+}
+.redColor{
+	background: #E66233;
+}
+.purpColor{
+	background: #9C7BC1;
+}
+#heading-container{
+	margin-top: 47px;
+}
+#heading{
+	font-size: 47px;
+}
+#buttons-section{
+	margin-top: 87px;
+}
+#time-left-section{
+	margin-top: 87px;
+	display: none;
+	margin-bottom: 30px;
+}
+#time-left{
+	font-size: 74px;
+}
+#message{
+	font-size: 27px;
+	margin-bottom: 39px;
+}
+.button-text-adjust{
+	margin-top: 13px;
+}
+.time-in-min{
+	padding: 7px;
+	font-size: 17px;
+}
+#pauseBtn{
+	display: none;
+}
+#resetBtn{
+	display: none;
+}
+#resumeBtn{
+	display: none;
+}
+.bigFont{
+	font-size: 60px !important;
+}
+#action-btn-section{
+	position: fixed;
+	top: 540px;
+	left: 45%;
+	margin: auto;
+}
