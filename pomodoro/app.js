@@ -110,6 +110,7 @@
     global.intervalID = setInterval(function (){
       global.timeLeft = seconds;
       if(seconds === 0){
+        global.playAtEnd();
         global.stats = 'break';
         clearInterval(global.intervalID);
         $("#pomodoro-body").removeClass("redColor");
@@ -142,11 +143,11 @@
         timeStr += min+' : ';
       }
       if(secs < 10){
-        if(secs % 2 === 1){
-          timeStr = '-- : --';
-        } else {
-          timeStr += '0'+secs;
+        if(secs < 6 && min === 0){
+          global.playBeep();
         }
+          timeStr += '0'+secs;
+
       } else {
         timeStr += secs;
       }
@@ -159,6 +160,7 @@
     global.intervalID = setInterval(function (){
       global.timeLeft = seconds;
       if(seconds === 0){
+        global.playAtEnd();
         global.stats = 'session';
         clearInterval(global.intervalID);
         $("#pomodoro-body").removeClass("purpColor");
@@ -191,11 +193,10 @@
         timeStr += min+' : ';
       }
       if(secs < 10){
-        if(secs % 2 === 1){
-          timeStr = '-- : --';
-        } else {
-          timeStr += '0'+secs;
+        if(secs < 6 && min === 0){
+          global.playBeep();
         }
+        timeStr += '0'+secs;
       } else {
         timeStr += secs;
       }
@@ -245,5 +246,17 @@
     global.oldMsg = null;
     $("#time-left-section").slideUp(700);
     $("#buttons-section").slideDown(2400);
+  }
+  // for notification.
+  global.playBeep = function (){
+    //https://notificationsounds.com/soundfiles/6512bd43d9caa6e02c990b0a82652dca/file-b1_oringz-pack-nine-14.mp3
+    var audio = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/385441/beep_2.mp3');
+    audio.play();
+  }
+  // notification sound at end
+  global.playAtEnd = function() {
+    //https://notificationsounds.com/soundfiles/ad972f10e0800b49d76fed33a21f6698/file-sounds-1056-i-saw-you.mp3
+    var audio = new Audio('https://notificationsounds.com/soundfiles/6512bd43d9caa6e02c990b0a82652dca/file-b1_oringz-pack-nine-14.mp3');
+    audio.play();
   }
 })(window);

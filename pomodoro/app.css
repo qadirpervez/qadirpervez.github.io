@@ -5,10 +5,17 @@
 
 /* STYLE STARTS */
 /* Body Style */
+
+/* font */
+
+@font-face{
+ font-family:'digital-clock-font';
+ src: url('https://ff.cdn.1001fonts.net/d/i/digital-7.regular.ttf');
+}
 #pomodoro-body{
 	padding: 0;
 	margin: 0;
-	font-family: 'Gloria Hallelujah', cursive;
+	font-family: 'Audiowide', cursive;
 	height: 100%;
 	width: 100%;
 }
@@ -37,10 +44,12 @@
 }
 #time-left{
 	font-size: 74px;
+  font-family: 'Wallpoet', cursive;
 }
 #message{
 	font-size: 27px;
 	margin-bottom: 39px;
+  font-family: 'Gloria Hallelujah', cursive;
 }
 .button-text-adjust{
 	margin-top: 13px;
@@ -62,8 +71,9 @@
 	font-size: 60px !important;
 }
 #action-btn-section{
-	position: fixed;
-	top: 540px;
+	position: absolute;
+	top: 420px;
 	left: 45%;
 	margin: auto;
 }
+
