@@ -10,7 +10,7 @@
 
 @font-face{
  font-family:'digital-clock-font';
- src: url('https://ff.cdn.1001fonts.net/d/i/digital-7.regular.ttf');
+ src: url('fonts/digital-7.regular.ttf');
 }
 #pomodoro-body{
 	padding: 0;
@@ -44,7 +44,7 @@
 }
 #time-left{
 	font-size: 74px;
-  font-family: 'Wallpoet', cursive;
+  font-family: 'digital-clock-font', cursive;
 }
 #message{
 	font-size: 27px;
@@ -76,4 +76,3 @@
 	left: 45%;
 	margin: auto;
 }
-
