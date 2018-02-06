@@ -7,9 +7,9 @@
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <h1>Animated Weather Icons</h1>
-
-  <div class="icon sun-shower">
+<h1>Local Weather FCC</h1>
+<div id="iconsMainDiv">
+  <div class="icon sun-shower" id="sunRain">
     <div class="cloud"></div>
     <div class="sun">
       <div class="rays"></div>
@@ -17,7 +17,7 @@
     <div class="rain"></div>
   </div>
 
-  <div class="icon thunder-storm">
+  <div class="icon thunder-storm" id="thunderstorm">
     <div class="cloud"></div>
     <div class="lightning">
       <div class="bolt"></div>
@@ -25,12 +25,12 @@
     </div>
   </div>
 
-  <div class="icon cloudy">
+  <div class="icon cloudy" id="clouds">
     <div class="cloud"></div>
     <div class="cloud"></div>
   </div>
 
-  <div class="icon flurries">
+  <div class="icon flurries" id="snow">
     <div class="cloud"></div>
     <div class="snow">
       <div class="flake"></div>
@@ -38,19 +38,36 @@
     </div>
   </div>
 
-  <div class="icon sunny">
+  <div class="icon sunny" id="clearW">
     <div class="sun">
       <div class="rays"></div>
     </div>
   </div>
 
-  <div class="icon rainy">
+  <div class="icon rainy" id="rain">
     <div class="cloud"></div>
     <div class="rain"></div>
   </div>
+</div>
+<!-- Main Div for everything -->
 
-  <p>Inspired By <a href="https://codepen.io/joshbader/pen/EjXgqr/" target="_blank">Josh Bader</a></p>
+<div class="row container-fluid">
+  <div class="col-md-6 col-md-offset-3" id="mainContainer">
+  <h1 style="margin-top: 70%;">Locating you...</h1>
+  </div>
+  <div class="clearfix"></div>
+  <div class="row col-md-8 col-md-offset-2" id="miniRow">
+    <div class="col-md-2" id="miniDiv">
+
+    </div>
+  </div>
+</div>
+
+<!-- Main div ends -->
+<p>Inspired By <a href="https://codepen.io/joshbader/pen/EjXgqr/" target="_blank">Josh Bader</a></p>
+<p>Created By Qadir Pervez for <a href="https://freecodecamp.org" target="_blank">freeCodeCamp</a> frontEnd Development project</p>
 </body>
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="app.js"></script>
 </html>
