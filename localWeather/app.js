@@ -3,3 +3,5 @@
 
 https://openweathermap.org/weather-conditions
 
+https://home.openweathermap.org/api_keys
+
