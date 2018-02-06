@@ -76,14 +76,16 @@ rainHTML = window.rain;
 window.iconsMainDiv.style.display = "none";
 
 
-(function (){
+function getGeo(){
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var lat = position.coords.latitude;
-      var lon = position.coords.longitude;
+      window.lat = position.coords.latitude;
+      window.lon = position.coords.longitude;
       console.log("lat:", lat);
     });
+  } else {
+    console.log("location not supported");
   }
 
-})();
+}
