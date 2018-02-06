@@ -76,7 +76,7 @@ rainHTML = window.rain;
 window.iconsMainDiv.style.display = "none";
 
 
-function getGeo(){
+window.getGeo = function(){
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
