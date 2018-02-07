@@ -7,71 +7,83 @@
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div id="bg"></div>
-<h1 id="title">Local Weather FCC</h1>
-<div id="iconsMainDiv">
-  <div class="icon sun-shower" id="sunRain">
-    <div class="cloud"></div>
-    <div class="sun">
-      <div class="rays"></div>
+  <div id="bg" class="bg"></div>
+  <h1 id="title">Local Weather FCC</h1>
+  <div id="iconsMainDiv">
+    <div class="icon sun-shower" id="sunRain">
+      <div class="cloud"></div>
+      <div class="sun">
+        <div class="rays"></div>
+      </div>
+      <div class="rain"></div>
     </div>
-    <div class="rain"></div>
-  </div>
 
-  <div class="icon thunder-storm" id="thunderstorm">
-    <div class="cloud"></div>
-    <div class="lightning">
-      <div class="bolt"></div>
-      <div class="bolt"></div>
+    <div class="icon thunder-storm" id="thunderstorm">
+      <div class="cloud"></div>
+      <div class="lightning">
+        <div class="bolt"></div>
+        <div class="bolt"></div>
+      </div>
+    </div>
+
+    <div class="icon cloudy" id="clouds">
+      <div class="cloud"></div>
+      <div class="cloud"></div>
+    </div>
+
+    <div class="icon flurries" id="snow">
+      <div class="cloud"></div>
+      <div class="snow">
+        <div class="flake"></div>
+        <div class="flake"></div>
+      </div>
+    </div>
+
+    <div class="icon sunny" id="clearW">
+      <div class="sun">
+        <div class="rays"></div>
+      </div>
+    </div>
+
+    <div class="icon rainy" id="rain">
+      <div class="cloud"></div>
+      <div class="rain"></div>
     </div>
   </div>
+  <!-- Main Div for everything -->
 
-  <div class="icon cloudy" id="clouds">
-    <div class="cloud"></div>
-    <div class="cloud"></div>
-  </div>
-
-  <div class="icon flurries" id="snow">
-    <div class="cloud"></div>
-    <div class="snow">
-      <div class="flake"></div>
-      <div class="flake"></div>
+  <div class="row container-fluid">
+    <div id="mainContainer">
+      <div id="locate">
+        <h1 class="locate">Locating you...</h1>
+      </div>
+      <h1 class="locate" id="geoPlace"></h1>
+      <h1 class="locate" id="weatherFetch">Getting your weather report...</h1>
+      <div id="weatherData">
+        <div id="skyCloudData" style="background: #161616; opacity: 0.8; border-radius: 17%;" class="pull-left">
+        </div>
+        <div id="tempDiv" class="pull-right">
+          <p id="temperature"><span id="temp">29</span> <span id="unit" >&#8451; &nbsp;</span> <button class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer "></i></button> <span id="unit2"  class="activeUnit"> &#8457;</span> </p>
+        </div>
+      </div>
     </div>
+    <div class="clearfix"></div>
   </div>
 
-  <div class="icon sunny" id="clearW">
-    <div class="sun">
-      <div class="rays"></div>
-    </div>
-  </div>
-
-  <div class="icon rainy" id="rain">
-    <div class="cloud"></div>
-    <div class="rain"></div>
-  </div>
-</div>
-<!-- Main Div for everything -->
-
-<div class="row container-fluid">
-  <div id="mainContainer">
-  <h1 class="locate" id="locate">Locating you...</h1>
-  <h1 class="locate" id="geoPlace"></h1>
-  <h1 class="locate" id="weatherFetch">Getting your weather report...</h1>
-  <div id="weatherData"></div>
-  </div>
-  <div class="clearfix"></div>
+  <!-- Main div ends -->
+  <!-- small mini div -->
   <div class="row col-md-8 col-md-offset-2" id="miniRow">
     <div class="col-md-2" id="miniDiv">
 
     </div>
   </div>
-</div>
-
-<!-- Main div ends -->
-<p>Inspired By <a href="https://codepen.io/joshbader/pen/EjXgqr/" target="_blank">Josh Bader</a></p>
-<p>Created By Qadir Pervez for <a href="https://freecodecamp.org" target="_blank">freeCodeCamp</a> frontEnd Development project</p>
+  <!-- small mini div ends -->
+  <div id="footerP">
+    <p>Inspired By <a href="https://codepen.io/joshbader/pen/EjXgqr/" target="_blank">Josh Bader</a></p>
+    <p>Created By Qadir Pervez for <a href="https://freecodecamp.org" target="_blank">freeCodeCamp</a> frontEnd Development project</p>
+  </div>
 </body>
 <script
-  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script src="app.js"></script>
 </html>

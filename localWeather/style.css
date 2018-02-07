@@ -43,7 +43,7 @@ p { margin: 1.375rem 0; }
   width: 3.6875em;
   height: 3.6875em;
   margin: -1.84375em;
-  background: currentColor;
+  background: #161616;
   border-radius: 50%;
   box-shadow:
     -2.1875em 0.6875em 0 -0.6875em,
@@ -313,9 +313,23 @@ p { margin: 1.375rem 0; }
   top: 0;
   width: 100%;
   height: 100%;
-  background: url(images/clear.jpeg) no-repeat center center fixed;
   background-size: cover;
   -webkit-filter: blur(4px);
+}
+.cloudsA{
+  background: url(images/clouds.jpg) no-repeat center center fixed;
+}
+.rainA{
+  background: url(images/rain.jpeg) no-repeat center center fixed;
+}
+.snowA{
+  background: url(images/snow.jpeg) no-repeat center center fixed;
+}
+.clearA{
+  background: url(images/clear.jpeg) no-repeat center center fixed;
+}
+.thunderA{
+  background: url(images/thunder2.jpeg) no-repeat center center fixed;
 }
 #title{
   font-size: 36px;
@@ -324,15 +338,19 @@ p { margin: 1.375rem 0; }
 }
 #mainContainer{
   position: relative;
-  width: 560px;
-  background: rgba(170, 170, 170,.3);
+  left: 14%;
+  width: 380px;
+  background: rgba(130, 130, 130, .1);
   padding: 20px 22px;
   border: 1px solid;
   border-top-color: rgba(255,255,255,.4);
   border-left-color: rgba(255,255,255,.4);
   border-bottom-color: rgba(60,60,60,.4);
   border-right-color: rgba(60,60,60,.4);
+  border-radius: 5px;
+  height: 400px;
 }
+
 .locate{
   text-shadow: 3px 3px 2px #999;
 }
@@ -341,4 +359,23 @@ p { margin: 1.375rem 0; }
 }
 #weatherFetch{
   display: none;
+}
+#footerP p{
+  position: relative;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 300;
+  text-shadow: 1px 1px 1px #000;
+}
+#footerP a{
+  font-size: 19px;
+}
+#temperature{
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  display: none;
+}
+#temperature .activeUnit{
+  color: #5bc0de;
 }
