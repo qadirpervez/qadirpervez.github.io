@@ -11,7 +11,8 @@
 // _____________________________________________________________
 
 var apiOBJ = {
-  url: "api.openweathermap.org/data/2.5/forecast?",
+  locate: "https://freegeoip.net/json/", //for location as browser has some issue with my coding.
+  url: "https://api.openweathermap.org/data/2.5/forecast?",
   // q=London&appid=b6907d289e10d714a6e88b30761fae22 By CityName
   // lat=35&lon=139 By Lat and Long
   apiKey: "7336c358d9a2fe6239a7f49f942f8688" // Success Responce: cod == 200, ERROR RES: cod: 404 OR 400,
@@ -74,18 +75,26 @@ snowHTML = window.snow,
 clearWHTML = window.clearW,
 rainHTML = window.rain;
 window.iconsMainDiv.style.display = "none";
-
+var lat, long, city, locObj;
 
 window.getGeo = function(){
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      window.lat = position.coords.latitude;
-      window.lon = position.coords.longitude;
-      console.log("lat:", lat);
-    });
-  } else {
-    console.log("location not supported");
-  }
-
+  $.getJSON(window.apiOBJ.locate, function ( data ){
+    window.lat = data.latitude;
+    window.long = data.longitude;
+    window.locObj = data;
+    if(data.city !== '' && data.region_code !== '' && data.country_code != ''){
+      $("#geoPlace").html(data.city+', '+data.region_code+', '+data.country_code);
+      $("#geoPlace").show();
+      $("#locate").hide();
+      $("#weatherFetch").show();
+    }
+    setTimeout(window.getWeatherData, 2000);
+  });
 }
+window.getWeatherData = function(){
+  var url = window.apiOBJ.url+"lat="+window.lat+"&lon="+window.long+"&appid="+window.apiOBJ.apiKey;
+  $.getJSON(url, function ( data ){
+    console.log(data);
+  });
+}
+setTimeout(getGeo, 2000);

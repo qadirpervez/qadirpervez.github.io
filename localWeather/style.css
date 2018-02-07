@@ -16,7 +16,7 @@ body {
 h1 {
   margin-bottom: 1.375em;
   color: #fff;
-  font-weight: 100;
+  font-weight: 300;
   font-size: 2em;
   text-transform: uppercase;
 }
@@ -155,6 +155,7 @@ p { margin: 1.375rem 0; }
   transform: rotate(-28deg);
   animation: rain 3s linear infinite;
 }
+
 
 .bolt {
   position: absolute;
@@ -305,10 +306,39 @@ p { margin: 1.375rem 0; }
 }
 /* My Style Only Below */
 
+
+#bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url(images/clear.jpeg) no-repeat center center fixed;
+  background-size: cover;
+  -webkit-filter: blur(4px);
+}
+#title{
+  font-size: 36px;
+  position: relative;
+  text-shadow: 1px 1px 2px #999;
+}
 #mainContainer{
-  height: 460px;
-  box-shadow: 4px 4px 2px #999;
-  color: #fff;
-  background: transparent;
-  opacity: 0.5;
+  position: relative;
+  width: 560px;
+  background: rgba(170, 170, 170,.3);
+  padding: 20px 22px;
+  border: 1px solid;
+  border-top-color: rgba(255,255,255,.4);
+  border-left-color: rgba(255,255,255,.4);
+  border-bottom-color: rgba(60,60,60,.4);
+  border-right-color: rgba(60,60,60,.4);
+}
+.locate{
+  text-shadow: 3px 3px 2px #999;
+}
+#geoPlace{
+  display: none;
+}
+#weatherFetch{
+  display: none;
 }
