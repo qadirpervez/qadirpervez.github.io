@@ -96,7 +96,7 @@ window.getGeo = function(){
 window.getWeatherDataGeo = function(lat, lon){
   lat = lat || window.lat;
   lon = lon || window.long;
-  console.log('Get Data Called', lat);
+  console("called", lat)
   var url = window.apiOBJ.url+"lat="+lat+"&lon="+lon + window.apiOBJ.apiKey;
   $.getJSON(url, function ( data ){
     window.weatherDataFirst = data;
@@ -204,9 +204,8 @@ window.getLocCallApi = function (){
       window.usedLocation = true;
       window.lat = position.coords.latitude;
       window.long = position.coords.longitude;
+      console.log('calling again')
       window.getWeatherDataGeo(window.lat, window.long)
-    }, function() {
-      // handleLocationError(true, infoWindow, map.getCenter());
     });
   } else {
     console.log('Not Supported geo location');
