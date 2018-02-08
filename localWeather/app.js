@@ -201,9 +201,9 @@ window.showFarenhiet = function (){
 window.getLocCallApi = function (){
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      window.usedLocation = true;
       window.lat = position.coords.latitude;
       window.long = position.coords.longitude;
+      window.usedLocation = true;
       console.log('calling again')
       window.getWeatherDataGeo(window.lat, window.long)
     });
