@@ -205,7 +205,7 @@ window.getLocCallApi = function (){
       window.long = position.coords.longitude;
       window.getWeatherDataGeo(window.lat, window.long)
     }, function() {
-      handleLocationError(true, infoWindow, map.getCenter());
+      // handleLocationError(true, infoWindow, map.getCenter());
     });
   } else {
     console.log('Not Supported geo location');
