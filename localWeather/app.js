@@ -96,7 +96,7 @@ window.getGeo = function(){
 window.getWeatherDataGeo = function(lat, lon){
   lat = lat || window.lat;
   lon = lon || window.long;
-  console("called", lat)
+  console.log("called", lat)
   var url = window.apiOBJ.url+"lat="+lat+"&lon="+lon + window.apiOBJ.apiKey;
   $.getJSON(url, function ( data ){
     window.weatherDataFirst = data;
@@ -204,7 +204,7 @@ window.getLocCallApi = function (){
       window.lat = position.coords.latitude;
       window.long = position.coords.longitude;
       window.usedLocation = true;
-      console.log('calling again')
+      console.log('calling again');
       window.getWeatherDataGeo(window.lat, window.long)
     });
   } else {
