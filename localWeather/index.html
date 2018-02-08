@@ -4,6 +4,7 @@
   <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,700,400' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css" >
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -52,19 +53,45 @@
   </div>
   <!-- Main Div for everything -->
 
-  <div class="row container-fluid">
-    <div id="mainContainer">
+  <div class="row container-fluid" id="mainContainerDiv">
+    <div id="mainContainer" class="col-md-10 col-lg-10 col-lg-offset-1 col-md-offset-1">
       <div id="locate">
         <h1 class="locate">Locating you...</h1>
       </div>
       <h1 class="locate" id="geoPlace"></h1>
       <h1 class="locate" id="weatherFetch">Getting your weather report...</h1>
-      <div id="weatherData">
-        <div id="skyCloudData" style="background: #161616; opacity: 0.8; border-radius: 17%;" class="pull-left">
+      <div id="weatherData" class="row">
+        <div id="tempDiv" class="col-md-6 col-sm-6 col-xs-6">
+          <p id="temperature"><span id="temp">29</span> <span id="celcius" class="activeUnit pointerP" onclick="showCelcius()" >&#8451;</span> | <span id="farenhiet" class="pointerP" onclick="showFarenhiet()"> &#8457;</span> </p>
         </div>
-        <div id="tempDiv" class="pull-right">
-          <p id="temperature"><span id="temp">29</span> <span id="unit" >&#8451; &nbsp;</span> <button class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-transfer "></i></button> <span id="unit2"  class="activeUnit"> &#8457;</span> </p>
+        <div id="skyCloudData" class="col-md-6 col-sm-6 col-xs-6">
         </div>
+      </div>
+      <div id="otherDetails">
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <h4><i class="wi wi-cloud"></i></h4>
+            <p id="desc"></p>
+          </div>
+          <div class="col-md-3">
+            <h4><i class="wi wi-humidity"></i></h4>
+            <p id="humidity"></p>
+          </div>
+          <div class="col-md-3">
+            <h4><i class="wi wi-barometer"></i></h4>
+            <p id="pressure"></p>
+          </div>
+          <div class="col-md-3">
+            <h4><i class="wi wi-strong-wind"></i></h4>
+            <p id="windDesc"></p>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div id="moreInfo">
+        <p onclick="getLocCallApi()" id="usedLoc">USE LOCATION</p>
+        <p id="cityS"></p>
       </div>
     </div>
     <div class="clearfix"></div>
