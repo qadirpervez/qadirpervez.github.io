@@ -96,6 +96,7 @@ window.getGeo = function(){
 window.getWeatherDataGeo = function(lat, lon){
   lat = lat || window.lat;
   lon = lon || window.long;
+  console.log('Get Data Called', lat);
   var url = window.apiOBJ.url+"lat="+lat+"&lon="+lon + window.apiOBJ.apiKey;
   $.getJSON(url, function ( data ){
     window.weatherDataFirst = data;
