@@ -195,7 +195,7 @@ window.showAddress = function (){
     if(sublocal !== undefined){
       local = sublocal;
     }
-    var address = local + ', ' + state + ', ' country;
+    var address = local + ', ' + state + ', ' + country;
     $("#locate").hide();
     $("#geoPlace").html(address);
     $("#geoPlace").show();
