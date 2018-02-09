@@ -13,6 +13,9 @@
 var apiOBJ = {
   locate: "https://freegeoip.net/json/", //for location as browser has some issue with my coding.
   url: "https://api.openweathermap.org/data/2.5/forecast?",
+  addressG: "https://maps.googleapis.com/maps/api/geocode/json?latlng=",
+  keyG: "&key=AIzaSyD-VgZ9f-MhD7Cc76245kUYHxVXHtznEfQ",
+  // 22.5327038,88.38135160000002
   // q=London&appid=b6907d289e10d714a6e88b30761fae22 By CityName
   // lat=35&lon=139cnt=10 total 10 days By Lat and Long
   apiKey: "&appid=7336c358d9a2fe6239a7f49f942f8688" // Success Responce: cod == 200, ERROR RES: cod: 404 OR 400,
@@ -122,7 +125,6 @@ window.showWeatherData = function(weather){
   var headingText = '';
   headingText = city+', '+country;
   $("#geoPlace").html(headingText);
-
   var type = weather.list[0].weather[0].main;
   $("#desc").html(weather.list[0].weather[0].description);
   $("#humidity").html(weather.list[0].main.humidity + ' %');
@@ -133,6 +135,7 @@ window.showWeatherData = function(weather){
     $("#usedLoc").show();
   } else {
     $("#usedLoc").hide();
+    window.showAddress();
   }
   temp = parseInt(weather.list[0].main.temp);
   window.tempC = temp - 273;
@@ -161,6 +164,13 @@ window.showWeatherData = function(weather){
 
   $("#temp").html(window.tempC);
   $("#temperature").show();
+}
+window.showAddress = function (){
+  // call google map api for address.
+  url = window.apiOBJ.addressG + window.lat + ',' + window.long + window.apiOBJ.keyG;
+  $.getJSON(url, function ( data ){
+    console.log(data);
+  });
 }
 window.changeBg = function(str){
   switch(str){
