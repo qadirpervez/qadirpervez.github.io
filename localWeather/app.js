@@ -170,8 +170,32 @@ window.showAddress = function (){
   url = window.apiOBJ.addressG + window.lat + ',' + window.long + window.apiOBJ.keyG;
   $.getJSON(url, function ( data ){
     console.log(data);
-    var address = data.results[0].address_components[2].long_name + ', ' + data.results[0].address_components[4].long_name + ', ' + data.results[0].address_components[5].short_name + ', ' + data.results[0].address_components[6].short_name;
 
+    var city, local, sublocal, country, state;
+    var sizeObj = data.results[0].address_components.length;
+    var obj = data.results[0].address_components;
+    for(i = 0; i < sizeObj; i++){
+      if(obj[i].types.indexOf("administrative_area_level_1") != -1 ){
+        state = obj[i].short_name;
+      }
+      if(obj[i].types.indexOf("sublocality_level_1") != -1 ){
+        sublocal = obj[i].long_name;
+      }
+      if(obj[i].types.indexOf("locality") != -1 ){
+        local = obj[i].long_name;
+      }
+      if(obj[i].types.indexOf("administrative_area_level_2") != -1 ){
+        city = obj[i].long_name;
+      }
+      if(obj[i].types.indexOf("country") != -1 ){
+        country = obj[i].short_name;
+      }
+    }
+
+    if(sublocal !== undefined){
+      local = sublocal;
+    }
+    var address = local + ', ' + state + ', ' country;
     $("#locate").hide();
     $("#geoPlace").html(address);
     $("#geoPlace").show();
