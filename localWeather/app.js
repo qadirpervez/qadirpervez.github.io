@@ -169,6 +169,7 @@ window.showAddress = function (){
   // call google map api for address.
   url = window.apiOBJ.addressG + window.lat + ',' + window.long + window.apiOBJ.keyG;
   $.getJSON(url, function ( data ){
+    console.log(data);
     var address = data.results[0].address_components[2].long_name + ', ' + data.results[0].address_components[4].long_name + ', ' + data.results[0].address_components[5].short_name + ', ' + data.results[0].address_components[6].short_name;
 
     $("#locate").hide();
