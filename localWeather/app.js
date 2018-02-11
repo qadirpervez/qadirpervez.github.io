@@ -262,7 +262,7 @@ window.getCoords = function (){
     // is geolocation granted?
     permission.state === "granted"
     ? navigator.geolocation.getCurrentPosition(function(position){
-      console.log('setting by checking location'); 
+      console.log('setting by checking location');
       window.lat = position.coords.latitude;
       window.long = position.coords.longitude;
     })
@@ -277,6 +277,7 @@ window.getCoords = function (){
 window.getCoords();
 if(window.lat !== undefined && window.long !== undefined){
   window.usedLocation = true;
+  console.log('calling with original data');
   window.getWeatherDataGeo(window.lat, window.long);
 } else {
   console.log('LOC data not available');
