@@ -122,16 +122,11 @@ window.getWeatherDataGeoCity = function(queryString){
   });
 }
 window.showWeatherData = function(weather){
-  var city = weather.city.name;
-  var country = weather.city.country;
-  var headingText = '';
-  headingText = city+', '+country;
-  $("#geoPlace").html(headingText);
-  var type = weather.list[0].weather[0].main;
-  $("#desc").html(weather.list[0].weather[0].description);
-  $("#humidity").html(weather.list[0].main.humidity + ' %');
-  $("#pressure").html(weather.list[0].main.grnd_level + ' hPa');
-  $("#windDesc").html(weather.list[0].wind.speed + ' m / s');
+  var type = weather.weather[0].main;
+  $("#desc").html(weather.weather[0].description);
+  $("#humidity").html(weather.main.humidity + ' %');
+  $("#pressure").html(weather.main.pressure + ' hPa');
+  $("#windDesc").html(weather.wind.speed + ' m / s');
   $("#otherDetails").show();
   if(window.usedLocation === false){
     $("#usedLoc").show();
@@ -139,7 +134,7 @@ window.showWeatherData = function(weather){
     $("#usedLoc").hide();
     window.showAddress();
   }
-  temp = parseInt(weather.list[0].main.temp);
+  temp = parseInt(weather.main.temp);
   window.tempC = temp - 273;
   window.tempF = Math.round(((tempC * 9) / 5) + 32);
   window.tempC = Math.round(window.tempC);
