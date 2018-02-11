@@ -274,16 +274,18 @@ window.getCoords = function (){
   )
 }
 
-window.getCoords().then(function(){
+window.getCoords();
+window.setUP = function (){
   if(window.lat !== undefined && window.long !== undefined){
     window.usedLocation = true;
     console.log('calling with original data');
     window.getWeatherDataGeo(window.lat, window.long);
   } else {
     console.log('LOC data not available');
-    // setTimeout(getGeo, 600);
+    setTimeout(getGeo, 100);
   }
-});
+}
+setTimeout(window.setUp, 1000)
 
 // getCoords().then(coords => console.log(coords))
 //setTimeout(getGeo, 2000);
