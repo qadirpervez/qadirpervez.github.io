@@ -316,19 +316,22 @@ p { margin: 1.375rem 0; }
   -webkit-filter: blur(4px);
 }
 .cloudsA{
-  background: url(images/clouds.jpg) no-repeat center center fixed;
+  background: url(https://qadirpervez.github.io/images/clouds.jpg) no-repeat center center fixed;
 }
 .rainA{
-  background: url(images/rain.jpeg) no-repeat center center fixed;
+  background: url(https://qadirpervez.github.io/https://qadirpervez.github.io/images/rain.jpeg) no-repeat center center fixed;
 }
 .snowA{
-  background: url(images/snow.jpeg) no-repeat center center fixed;
+  background: url(https://qadirpervez.github.io/images/snow.jpeg) no-repeat center center fixed;
 }
 .clearA{
-  background: url(images/clear.jpeg) no-repeat center center fixed;
+  background: url(https://qadirpervez.github.io/images/clear.jpeg) no-repeat center center fixed;
 }
 .thunderA{
-  background: url(images/thunder2.jpeg) no-repeat center center fixed;
+  background: url(https://qadirpervez.github.io/images/thunder2.jpeg) no-repeat center center fixed;
+}
+.hazeA{
+  background: url(https://qadirpervez.github.io/images/haze.jpg) no-repeat center center fixed;
 }
 #title{
   font-size: 36px;

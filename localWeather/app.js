@@ -156,6 +156,8 @@ window.showWeatherData = function(weather){
     case "Thunderstorm":
     window.changeBg('thunder');
     break;
+    case "Haze":
+    window.changeBg('haze');
     default:
     window.changeBg('', icon);
   }
@@ -169,7 +171,7 @@ window.showAddress = function (){
   $.getJSON(url, function ( data ){
     console.log(data);
 
-    var city, local, sublocal, country, state;
+    var city, local, sublocal, country, state, zip;
     var sizeObj = data.results[0].address_components.length;
     var obj = data.results[0].address_components;
     for(i = 0; i < sizeObj; i++){
@@ -188,12 +190,19 @@ window.showAddress = function (){
       if(obj[i].types.indexOf("country") != -1 ){
         country = obj[i].short_name;
       }
+      if(obj[i].types.indexOf("postal_code") != -1){
+        zip = obj[i].long_name;
+      }
     }
 
     if(sublocal !== undefined){
       local = sublocal;
     }
-    var address = local + ', ' + state + ', ' + country;
+    if(local === undefined){
+      var address = zip + ', ' + state + ', ' + country;
+    } else {
+      var address = local + ', ' + state + ', ' + country;
+    }
     $("#locate").hide();
     $("#geoPlace").html(address);
     $("#geoPlace").show();
@@ -221,6 +230,11 @@ window.changeBg = function(str, icon){
     case 'thunder':
     $("#bg").attr("class", "thunderA");
     $("#skyCloudData").html(window.thunderstormHTML);
+    break;
+    case 'haze':
+    $("#bg").attr("class", "hazeA");
+    var html = '<div class="text-center"><img src="https://openweathermap.org/img/w/'+icon+'.png" ></div>';
+    $("#skyCloudData").html(html);
     break;
     default:
     $("#bg").attr("style", "background: rgb(175, 175, 175);");
