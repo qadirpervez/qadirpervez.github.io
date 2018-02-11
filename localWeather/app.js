@@ -274,15 +274,16 @@ window.getCoords = function (){
   )
 }
 
-window.getCoords();
-if(window.lat !== undefined && window.long !== undefined){
-  window.usedLocation = true;
-  console.log('calling with original data');
-  window.getWeatherDataGeo(window.lat, window.long);
-} else {
-  console.log('LOC data not available');
-  // setTimeout(getGeo, 600);
-}
+window.getCoords().then(function(){
+  if(window.lat !== undefined && window.long !== undefined){
+    window.usedLocation = true;
+    console.log('calling with original data');
+    window.getWeatherDataGeo(window.lat, window.long);
+  } else {
+    console.log('LOC data not available');
+    // setTimeout(getGeo, 600);
+  }
+});
 
 // getCoords().then(coords => console.log(coords))
 //setTimeout(getGeo, 2000);
