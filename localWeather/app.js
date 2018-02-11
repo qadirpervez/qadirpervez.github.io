@@ -223,7 +223,7 @@ window.changeBg = function(str, icon){
     $("#skyCloudData").html(window.thunderstormHTML);
     break;
     default:
-    $("#bg").attr("style", "background: #fff");
+    $("#bg").attr("style", "background: rgb(175, 175, 175);");
     var html = '<div class="text-center"><img src="https://openweathermap.org/img/w/'+icon+'.png" ></div>';
     $("#skyCloudData").html(html);
   }
