@@ -12,7 +12,7 @@
 
 var apiOBJ = {
   locate: "https://freegeoip.net/json/", //for location as browser has some issue with my coding.
-  url: "https://api.openweathermap.org/data/2.5/forecast?",
+  url: "https://api.openweathermap.org/data/2.5/weather?",
   addressG: "https://maps.googleapis.com/maps/api/geocode/json?latlng=",
   keyG: "&key=AIzaSyD-VgZ9f-MhD7Cc76245kUYHxVXHtznEfQ",
   // 22.5327038,88.38135160000002
