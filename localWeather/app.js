@@ -261,7 +261,11 @@ window.getCoords = function (){
         navigator.permissions.query({name:'geolocation'}).then(permission =>
             // is geolocation granted?
             permission.state === "granted"
-            ? navigator.geolocation.getCurrentPosition(pos => resolve(pos.coords))
+            ? navigator.geolocation.getCurrentPosition(function(position){
+              window.lat = position.coords.latitude;
+              window.long = position.coords.longitude;
+              window.usedLocation = true;
+            })
             : resolve(null),
         reject) :
 
@@ -270,7 +274,7 @@ window.getCoords = function (){
     )
 }
 
-getCoords().then(coords => console.log(coords))
+// getCoords().then(coords => console.log(coords))
 //setTimeout(getGeo, 2000);
 window.locateFail = function(error){
   console.log('Failed getting the location', error);
