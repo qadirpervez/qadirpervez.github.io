@@ -159,6 +159,7 @@ window.showWeatherData = function(weather){
     break;
     case "Haze":
     window.changeBg('haze', icon);
+    break;
     default:
     window.changeBg('', icon);
   }
