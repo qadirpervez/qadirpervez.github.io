@@ -274,7 +274,10 @@ window.getCoords().then(coords => {
   console.log(coords);
   if(coords === null) setTimeout(getGeo, 1000);
   else {
-    // window.lat = 
+    window.lat = coords.latitude;
+    window.long = coords.longitude;
+    window.usedLocation = true;
+    windoe.getWeatherDataGeo(window.lat, window.long);
   }
 });
 //setTimeout(getGeo, 2000);
