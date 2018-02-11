@@ -251,7 +251,27 @@ window.getLocCallApi = function (){
     console.log('Not Supported geo location');
   }
 }
-setTimeout(getGeo, 2000);
+
+window.getCoords = function (){
+    return new Promise((resolve, reject) =>
+
+        navigator.permissions ?
+
+        // Permission API is implemented
+        navigator.permissions.query({name:'geolocation'}).then(permission =>
+            // is geolocation granted?
+            permission.state === "granted"
+            ? navigator.geolocation.getCurrentPosition(pos => resolve(pos.coords))
+            : resolve(null),
+        reject) :
+
+        // Permission API was not implemented
+        reject(new Error("Permission API is not supported"))
+    )
+}
+
+getCoords().then(coords => console.log(coords))
+//setTimeout(getGeo, 2000);
 window.locateFail = function(error){
   console.log('Failed getting the location', error);
 }
