@@ -316,22 +316,25 @@ p { margin: 1.375rem 0; }
   -webkit-filter: blur(4px);
 }
 .cloudsA{
-  background: url(https://qadirpervez.github.io/images/clouds.jpg) no-repeat center center fixed;
+  background: url(https://qadirpervez.github.io/localWeather/images/clouds.jpg) no-repeat center center fixed;
 }
 .rainA{
-  background: url(https://qadirpervez.github.io/https://qadirpervez.github.io/images/rain.jpeg) no-repeat center center fixed;
+  background: url(https://qadirpervez.github.io/localWeather/rain.jpeg) no-repeat center center fixed;
 }
 .snowA{
-  background: url(https://qadirpervez.github.io/images/snow.jpeg) no-repeat center center fixed;
+  background: url(https://qadirpervez.github.io/localWeather/images/snow.jpeg) no-repeat center center fixed;
 }
 .clearA{
-  background: url(https://qadirpervez.github.io/images/clear.jpeg) no-repeat center center fixed;
+  background: url(https://qadirpervez.github.io/localWeather/images/clear.jpeg) no-repeat center center fixed;
 }
 .thunderA{
-  background: url(https://qadirpervez.github.io/images/thunder2.jpeg) no-repeat center center fixed;
+  background: url(https://qadirpervez.github.io/localWeather/images/thunder2.jpeg) no-repeat center center fixed;
 }
 .hazeA{
-  background: url(https://qadirpervez.github.io/images/haze.jpg) no-repeat center center fixed;
+  background: url(https://qadirpervez.github.io/localWeather/images/haze.jpg) no-repeat center center fixed;
+}
+.bgColorGrey{
+  background: rgb(195, 195, 195);
 }
 #title{
   font-size: 36px;
