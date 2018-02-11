@@ -272,6 +272,10 @@ window.getCoords = function (){
 
 window.getCoords().then(coords => {
   console.log(coords);
+  if(coords === null) setTimeout(getGeo, 1000);
+  else {
+    // window.lat = 
+  }
 });
 //setTimeout(getGeo, 2000);
 window.locateFail = function(error){
