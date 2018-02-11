@@ -91,7 +91,7 @@ window.getGeo = function(){
       $("#locate").hide();
       $("#weatherFetch").show();
     }
-    setTimeout(window.getWeatherDataGeo, 2000);
+    setTimeout(window.getWeatherDataGeo, 400);
   }).fail(function(jqXHR, textStatus, errorThrown) {
     window.locateFail(errorThrown);
   });
@@ -99,7 +99,7 @@ window.getGeo = function(){
 window.getWeatherDataGeo = function(lat, lon){
   lat = lat || window.lat;
   lon = lon || window.long;
-  console.log("called", lat)
+  console.log("called", lat);
   var url = window.apiOBJ.url+"lat="+lat+"&lon="+lon + window.apiOBJ.apiKey;
   $.getJSON(url, function ( data ){
     window.weatherDataFirst = data;
@@ -253,25 +253,32 @@ window.getLocCallApi = function (){
 }
 
 window.getCoords = function (){
-    return new Promise((resolve, reject) =>
+  return new Promise((resolve, reject) =>
 
-        navigator.permissions ?
+  navigator.permissions ?
 
-        // Permission API is implemented
-        navigator.permissions.query({name:'geolocation'}).then(permission =>
-            // is geolocation granted?
-            permission.state === "granted"
-            ? navigator.geolocation.getCurrentPosition(function(position){
-              window.lat = position.coords.latitude;
-              window.long = position.coords.longitude;
-              window.usedLocation = true;
-            })
-            : resolve(null),
-        reject) :
+  // Permission API is implemented
+  navigator.permissions.query({name:'geolocation'}).then(permission =>
+    // is geolocation granted?
+    permission.state === "granted"
+    ? navigator.geolocation.getCurrentPosition(function(position){
+      window.lat = position.coords.latitude;
+      window.long = position.coords.longitude;
+    })
+    : resolve(null),
+    reject) :
 
-        // Permission API was not implemented
-        reject(new Error("Permission API is not supported"))
-    )
+    // Permission API was not implemented
+    reject(new Error("Permission API is not supported"))
+  )
+}
+
+window.getCoords();
+if(window.lat !== undefined && window.long !== undefined){
+  window.usedLocation = true;
+  window.getWeatherDataGeo(window.lat, window.long);
+} else {
+  setTimeout(getGeo, 600);
 }
 
 // getCoords().then(coords => console.log(coords))
