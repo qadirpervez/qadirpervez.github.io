@@ -277,7 +277,7 @@ window.getCoords().then(coords => {
     window.lat = coords.latitude;
     window.long = coords.longitude;
     window.usedLocation = true;
-    windoe.getWeatherDataGeo(window.lat, window.long);
+    window.getWeatherDataGeo(window.lat, window.long);
   }
 });
 //setTimeout(getGeo, 2000);
