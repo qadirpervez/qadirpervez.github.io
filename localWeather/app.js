@@ -235,7 +235,7 @@ window.changeBg = function(str, icon){
     break;
     case 'haze':
     $("#bg").attr("class", "hazeA");
-    var html = '<div class="text-center"><img src="https://openweathermap.org/img/w/'+icon+'.png" ></div>';
+    var html = '<div class="text-center"><img src="https://ssl.gstatic.com/onebox/weather/64/fog.png" ></div>';
     $("#skyCloudData").html(html);
     break;
     default:
