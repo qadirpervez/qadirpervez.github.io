@@ -285,7 +285,7 @@ window.setUP = function (){
     setTimeout(getGeo, 100);
   }
 }
-setTimeout(window.setUp, 1000)
+setTimeout(setUp, 1000)
 
 // getCoords().then(coords => console.log(coords))
 //setTimeout(getGeo, 2000);
