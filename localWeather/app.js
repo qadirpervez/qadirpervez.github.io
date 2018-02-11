@@ -278,7 +278,7 @@ if(window.lat !== undefined && window.long !== undefined){
   window.usedLocation = true;
   window.getWeatherDataGeo(window.lat, window.long);
 } else {
-  setTimeout(getGeo, 600);
+  // setTimeout(getGeo, 600);
 }
 
 // getCoords().then(coords => console.log(coords))
