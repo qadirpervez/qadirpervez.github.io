@@ -123,6 +123,7 @@ window.getWeatherDataGeoCity = function(queryString){
 }
 window.showWeatherData = function(weather){
   var type = weather.weather[0].main;
+  var icon = weather.weather[0].icon;
   $("#desc").html(weather.weather[0].description);
   $("#humidity").html(weather.main.humidity + ' %');
   $("#pressure").html(weather.main.pressure + ' hPa');
@@ -156,7 +157,7 @@ window.showWeatherData = function(weather){
     window.changeBg('thunder');
     break;
     default:
-    window.changeBg('');
+    window.changeBg('', icon);
   }
 
   $("#temp").html(window.tempC);
@@ -199,7 +200,7 @@ window.showAddress = function (){
     return;
   });
 }
-window.changeBg = function(str){
+window.changeBg = function(str, icon){
   switch(str){
     case 'clouds':
     $("#bg").attr("class", "cloudsA");
@@ -222,7 +223,9 @@ window.changeBg = function(str){
     $("#skyCloudData").html(window.thunderstormHTML);
     break;
     default:
-    $("#bg").attr("class", "");
+    $("#bg").attr("style", "background: #fff");
+    var html = '<div class="text-center"><img src="https://openweathermap.org/img/w/'+icon+'.png" ></div>';
+    $("#skyCloudData").html(html);
   }
 }
 window.showCelcius = function (){
