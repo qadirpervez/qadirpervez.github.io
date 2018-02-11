@@ -261,11 +261,7 @@ window.getCoords = function (){
   navigator.permissions.query({name:'geolocation'}).then(permission =>
     // is geolocation granted?
     permission.state === "granted"
-    ? navigator.geolocation.getCurrentPosition(function(position){
-      console.log('setting by checking location');
-      window.lat = position.coords.latitude;
-      window.long = position.coords.longitude;
-    })
+    ? navigator.geolocation.getCurrentPosition(pos => resolve(pos.coords))
     : resolve(null),
     reject) :
 
@@ -274,20 +270,9 @@ window.getCoords = function (){
   )
 }
 
-window.getCoords();
-window.setUP = function (){
-  if(window.lat !== undefined && window.long !== undefined){
-    window.usedLocation = true;
-    console.log('calling with original data');
-    window.getWeatherDataGeo(window.lat, window.long);
-  } else {
-    console.log('LOC data not available');
-    setTimeout(getGeo, 100);
-  }
-}
-setTimeout(setUp, 1000)
-
-// getCoords().then(coords => console.log(coords))
+window.getCoords().then(coords => {
+  console.log(coords);
+});
 //setTimeout(getGeo, 2000);
 window.locateFail = function(error){
   console.log('Failed getting the location', error);
