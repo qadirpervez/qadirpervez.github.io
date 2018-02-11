@@ -102,6 +102,7 @@ window.getWeatherDataGeo = function(lat, lon){
   console.log("called", lat);
   var url = window.apiOBJ.url+"lat="+lat+"&lon="+lon + window.apiOBJ.apiKey;
   $.getJSON(url, function ( data ){
+    console.log(url);
     console.log(data);
     window.weatherDataFirst = data;
     $("#weatherFetch").hide();
