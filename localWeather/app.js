@@ -123,6 +123,7 @@ window.getWeatherDataGeoCity = function(queryString){
 }
 window.showWeatherData = function(weather){
   var type = weather.weather[0].main;
+  console.log(type);
   var icon = weather.weather[0].icon;
   $("#desc").html(weather.weather[0].description);
   $("#humidity").html(weather.main.humidity + ' %');
