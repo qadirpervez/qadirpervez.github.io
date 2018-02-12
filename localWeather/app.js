@@ -157,9 +157,10 @@ window.showWeatherData = function(weather){
     case "Thunderstorm":
     window.changeBg('thunder');
     break;
+    case "Smoke":
     case "Haze":
     window.changeBg('haze', icon);
-    break;
+    break;  
     default:
     window.changeBg('', icon);
   }
