@@ -300,4 +300,6 @@ window.getCoords().then(coords => {
 //setTimeout(getGeo, 2000);
 window.locateFail = function(error){
   console.log('Failed getting the location', error);
+  window.usedLocation = true;
+  window.getLocCallApi();
 }
