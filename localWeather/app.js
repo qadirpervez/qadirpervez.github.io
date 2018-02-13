@@ -91,6 +91,7 @@ window.getGeo = function(){
       $("#locate").hide();
       $("#weatherFetch").show();
     }
+    alert('mahek');
     setTimeout(window.getWeatherDataGeo, 400);
   }).fail(function(jqXHR, textStatus, errorThrown) {
     window.locateFail(errorThrown);
@@ -110,6 +111,8 @@ window.getWeatherDataGeo = function(lat, lon){
   }).fail(function(jqXHR, textStatus, errorThrown){
     //invalid coord, response 401, 400, 404 every error response.
     //edit this later,
+    window.usedLocation = true;
+    window.getLocCallApi();
   });
 }
 
@@ -266,6 +269,7 @@ window.getLocCallApi = function (){
     });
   } else {
     console.log('Not Supported geo location');
+    alert('mahek 2');
   }
 }
 
