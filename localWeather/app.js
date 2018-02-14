@@ -91,7 +91,6 @@ window.getGeo = function(){
       $("#locate").hide();
       $("#weatherFetch").show();
     }
-    alert('mahek');
     setTimeout(window.getWeatherDataGeo, 400);
   }).fail(function(jqXHR, textStatus, errorThrown) {
     window.locateFail(errorThrown);
@@ -270,7 +269,6 @@ window.getLocCallApi = function (){
     });
   } else {
     console.log('Not Supported geo location');
-    alert('mahek 2');
   }
 }
 
