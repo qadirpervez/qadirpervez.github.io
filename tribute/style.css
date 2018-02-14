@@ -1,0 +1,58 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lateef', cursive;
+  background: #fff;
+}
+/* 007300; */
+#image-area{
+  padding: 40px 0;
+}
+#image-area{
+  color: #000;
+  background: #fff;
+}
+h2{
+  font-size: 30px;
+}
+.arabic-title{
+  font-size: 45px;
+}
+
+h3{
+  color: #007300;
+  font-size: 35px;
+}
+.urdu-p{
+  font-size: 25px;
+}
+.arabic-p{
+  color: #222;
+  font-size: 30px;
+}
+#small-content{
+  background: #007300;
+  color: #fff !important;
+  padding: 20px;
+  border: 1px solid #004000;
+}
+#arabic-white{
+  color: #fff;
+  padding-bottom: 30px;
+}
+hr{
+  border: 1px solid #004000;
+  margin-top: 0;
+}
+.col-md-3{
+  min-height: 500px;
+  max-height: 500px;
+  padding: 20px;
+  border: 1px solid green;
+}
+.forward{
+  font-size: 20px;
+}
+.forward a:hover {
+  text-decoration: none;
+}
