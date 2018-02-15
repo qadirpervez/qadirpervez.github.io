@@ -1,0 +1,61 @@
+<!doctype HTML>
+<html lang="en">
+<!--
+WELCOME TO THE STATIC CONTENT,
+A pen By Qadir Pervez, also known as devD.
+This is basic Random Qupte Machine
+made with bootstrap, jquery and a lot of vannila javaScript.
+-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- bootstrap cdn -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" >
+  <!-- Custom Font -->
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" >
+</head>
+<body>
+  <div id="main">
+    <div id="title" class="text-center">
+      <h2>Random Quote Machine FCC</h2>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-6 col-md-offset-3">
+
+          <div class="well quoteWell">
+            <i class="fa fa-quote-left fa-3x"></i>
+            <blockquote>
+              <p class="quote lead" id="quoteContent"></p>
+              <footer>
+                <cite class="author" title="author">
+
+                </cite>
+              </footer>
+            </blockquote>
+            <div class="btn-group pull-right">
+              <button class="btn btn-default btnReload">
+                <i class="fa fa-refresh fa-2x"></i>
+              </button>
+              <a class="btn btn-default btnTweet" href="//https://twitter.com/intent/tweet?text=Humankind%20cannot%20gain%20anything%20without%20first%20giving%20something%20in%20return.%20To%20obtain%2C%20something%20of%20equal%20value%20must%20be%20lost." target="_blank">
+                <i class="fa fa-twitter fa-2x"></i>
+              </a>
+            </div>
+          </div>
+
+        <div id="buttons">
+          <button type="button" class="btn btn-default btn-lg" ><i class="fa fa-refresh"></i></button>
+          <button type="button" class="btn btn-warning btn-lg" ><i class="fa fa-twitter"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<!-- Some JS libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+<script src="app.js"></script>
+</html>

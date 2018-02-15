@@ -1,0 +1,19 @@
+/* Style for quoteMachine Game */
+/* Owner: Qadir Pervez */
+/* A beautifull PEN */
+
+
+/* STYLE STARTS */
+/* Body Style */
+body{
+  margin: 0;
+  padding: 0;
+  font-family: 'Hallelujah';
+  background: url(images/images.png);
+}
+h2{
+  text-transform: uppercase;
+  font-family: monospace;
+  font-size: 24px;
+  font-weight: 500;
+}
