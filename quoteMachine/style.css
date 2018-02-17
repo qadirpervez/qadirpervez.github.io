@@ -9,11 +9,36 @@ body{
   margin: 0;
   padding: 0;
   font-family: 'Hallelujah';
-  background: url(images/images.png);
+  background: rgba(220, 220, 220, 0.4);
+}
+#main{
+  margin-top: 80px;
 }
 h2{
   text-transform: uppercase;
   font-family: monospace;
   font-size: 24px;
   font-weight: 500;
+}
+p{
+  text-align: justify;
+}
+blockquote{
+  margin-top: 20px;
+}
+footer{
+  margin-top: 20px;
+}
+footer p{
+  text-align: center;
+}
+.btnTweet{
+  color: #fff;
+  background: #1da1f2;
+  border: 1px solid #1da1f2;
+}
+.btnTweet:hover, .btnTweet:active{
+  color: #1da1f2;
+  background: #fff;
+  border: 1px solid #f9f9f9;
 }

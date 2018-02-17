@@ -20,39 +20,35 @@ made with bootstrap, jquery and a lot of vannila javaScript.
 </head>
 <body>
   <div id="main">
-    <div id="title" class="text-center">
-      <h2>Random Quote Machine FCC</h2>
-    </div>
-    <div class="row text-center">
+    <div class="row">
       <div class="col-md-6 col-md-offset-3">
 
-          <div class="well quoteWell">
-            <i class="fa fa-quote-left fa-3x"></i>
-            <blockquote>
-              <p class="quote lead" id="quoteContent"></p>
-              <footer>
-                <cite class="author" title="author">
+        <div class="quoteWell">
+          <div class="text-center"><i class="fa fa-quote-left fa-3x"></i></div>
+          <blockquote>
+            <p class="quote lead" id="quoteContent"></p>
+            <footer>
+              <cite class="author" title="author" id="author">
 
-                </cite>
-              </footer>
-            </blockquote>
-            <div class="btn-group pull-right">
-              <button class="btn btn-default btnReload">
-                <i class="fa fa-refresh fa-2x"></i>
-              </button>
-              <a class="btn btn-default btnTweet" href="//https://twitter.com/intent/tweet?text=Humankind%20cannot%20gain%20anything%20without%20first%20giving%20something%20in%20return.%20To%20obtain%2C%20something%20of%20equal%20value%20must%20be%20lost." target="_blank">
-                <i class="fa fa-twitter fa-2x"></i>
-              </a>
-            </div>
+              </cite>
+            </footer>
+          </blockquote>
+          <div class="btn-group pull-right">
+            <button class="btn btn-default " onclick="getQuote()">
+              <i class="fa fa-refresh fa-2x"></i>
+            </button>
+
+            <a class="btn btn-default btnTweet" href="" id="share" target="_blank">
+              <i class="fa fa-twitter fa-2x"></i>
+            </a>
           </div>
-
-        <div id="buttons">
-          <button type="button" class="btn btn-default btn-lg" ><i class="fa fa-refresh"></i></button>
-          <button type="button" class="btn btn-warning btn-lg" ><i class="fa fa-twitter"></i></button>
         </div>
       </div>
     </div>
   </div>
+  <footer>
+    <p>Created by Qadir Pervez </p> <p>for <a href="https://freecodecamp.org">freeCodeCamp</a> </p> <p>Front End project</p> <p>RANDOM QUOTE MACHINE</p>
+  </footer>
 </body>
 <!-- Some JS libraries -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" ></script>
