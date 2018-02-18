@@ -5,3 +5,24 @@ body{
   margin-top: 55px;
 
 }
+.wikiDiv{
+  margin-top: 55px;
+}
+.wikiDiv a{
+  width: 99%;
+  background: #fff;
+  text-decoration: none;
+  padding: 20px 30px;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.wikiDiv a h1{
+  color: #A0522D;
+  font-size: 34px;
+  font-family: 'Titillium Web', sans-serif;
+}
+.wikiDiv a p{
+  color: #A0522D;
+  font-size: 18px;
+  font-family: 'Barlow Condensed', sans-serif;
+}
