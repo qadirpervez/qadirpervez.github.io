@@ -8,9 +8,9 @@
   <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-  <div class="row " id="search">
-    <div class="col-lg-4 col-md-offset-4">
-      <div class="input-group">
+  <div class="row container-fluid" id="search">
+    <div class="col-md-4 col-md-offset-4 col-sm-12">
+      <div class="input-group" id="placeing">
         <input type="text" class="form-control" id="searchText" oninput="checkBlank()" placeholder="Search on wikipedia...">
         <span class="input-group-btn">
           <button class="btn btn-secondary btn-success" onclick="searchWiki()" type="button">Search <i class="glyphicon glyphicon-search"></i>
@@ -19,13 +19,15 @@
       </div>
       <!-- <a href="https://en.wikipedia.org/wiki/Special:Random" class="btn btn-primary" target="_blank">Random Article</a> -->
     </div>
+    <div class="container-fluid text-center">
     <a href="https://en.wikipedia.org/wiki/Special:Random" class="btn btn-primary" target="_blank">Random Article</a>
+  </div>
   </div>
   <div class="wikiDiv">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-lg-8 col-sm-10 col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-offset-2 col-sm-offset-1">
         <div class="row" id="wikiData">
-          
+
         </div>
       </div>
     </div>

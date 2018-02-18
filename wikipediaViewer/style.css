@@ -3,7 +3,6 @@ body{
 }
 #search{
   margin-top: 55px;
-
 }
 .wikiDiv{
   margin-top: 55px;
@@ -16,6 +15,25 @@ body{
   text-align: justify;
   margin-bottom: 20px;
 }
+.animation{
+  animation-name: expand;
+  animation-duration: 800ms;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes expand{
+    0%{
+      opacity: 0;
+      transform: rotateY(-90deg) rotate(-90deg) translate(30px);
+    }
+    100%{
+      opacity: 1
+      transform: rotateY(-90deg) rotate(0deg) translate(0px);
+    }
+}
+#placeing{
+  margin-bottom: 25px;
+}
 .wikiDiv a h1{
   color: #A0522D;
   font-size: 34px;
@@ -25,4 +43,7 @@ body{
   color: #A0522D;
   font-size: 18px;
   font-family: 'Barlow Condensed', sans-serif;
+}
+#wikiData{
+  display: none;
 }
