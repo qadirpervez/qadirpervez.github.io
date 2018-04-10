@@ -264,7 +264,6 @@ window.getLocCallApi = function (){
       window.long = position.coords.longitude;
       window.usedLocation = true;
       console.log('calling again');
-      alert('mahek ab shayad I can understand why its happening');
       window.getWeatherDataGeo(window.lat, window.long)
     });
   } else {
